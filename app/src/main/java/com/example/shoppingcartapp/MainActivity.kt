@@ -4,6 +4,7 @@ import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import com.example.shoppingcartapp.ui.CartFragment
 import com.example.shoppingcartapp.ui.HomeFragment
@@ -14,8 +15,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         bottomNavigationView.menu.getItem(1).isEnabled = false
+
         replaceFragment(HomeFragment())
+
         bottomNavigationView.setOnItemSelectedListener() {
             fab.imageTintList = ColorStateList.valueOf(Color.rgb(255,255,255))
             when(it.itemId){
@@ -25,7 +29,7 @@ class MainActivity : AppCompatActivity() {
             true
         }
         fab.setOnClickListener{
-            fab.imageTintList = ColorStateList.valueOf(Color.rgb(77,208,225))
+            fab.imageTintList = ColorStateList.valueOf(Color.rgb(172,217,240))
             replaceFragment(CartFragment())
         }
 

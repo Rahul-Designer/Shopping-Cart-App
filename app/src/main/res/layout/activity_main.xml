@@ -35,7 +35,6 @@
             android:layout_gravity="bottom"
             app:itemIconSize="30dp"
             app:itemIconTint="@color/icon_color"
-            app:itemTextColor="@color/icon_color"
             app:menu="@menu/bottom_app_bar" />
 
     </com.google.android.material.bottomappbar.BottomAppBar>
